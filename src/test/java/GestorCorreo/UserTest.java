@@ -8,28 +8,29 @@ import java.util.ArrayList;
 public class UserTest {
     @Test
     public void create_new_user_with_name_surname_mailAdress(){
-        User felixtoledo = new User("Felix", "Toledo", "felixtoledoctes");
+        User pepe = new User("Pepe", "Pedro", "PepePedroctes");
 
-        String nameOfFelix = felixtoledo.getNombre();
-        String surnameOfFelix = felixtoledo.getApelldio();
-        String mailOfFelix = felixtoledo.getDireccionCorreo();
+        String nameOf = pepe.getNombre();
+        String surnameOf = pepe.getApelldio();
+        String mailOf = pepe.getDireccionCorreo();
 
-        assertEquals("Felix", nameOfFelix);
-        assertEquals("Toledo", surnameOfFelix);
-        assertEquals("felixtoledoctes@Pepe.com", mailOfFelix);
+        assertEquals("Pepe", nameOf);
+        assertEquals("Pedro", surnameOf);
+        assertEquals("PepePedroctes@Pepe.com", mailOf);
     }
 
     @Test
-    public void create_new_user_and_check_entry_to_userlist(){
+    public void create_user_and_check_entry_to_userlist(){
         MailManager aplicacion = new MailManager();
-        User felixtoledo = aplicacion.crearUsuario("Felix", "Toledo", "felixtoledoctes");
+        User pepepedro = aplicacion.crearUsuario("Pepe", "Pedro", "PepePedroctes");
         User orifarela = aplicacion.crearUsuario("Oriana", "Farela", "orifarela");
         
+        
         int cantidadDeUsuariosCreados = aplicacion.getListaUsuarios().size();
-        User usuarioFelix = aplicacion.getListaUsuarios().get(0);
+        User usuarioPepe = aplicacion.getListaUsuarios().get(0);
         
         assertEquals(2, cantidadDeUsuariosCreados);
-        assertEquals(felixtoledo, usuarioFelix);
+        assertEquals(pepepedro, usuarioPepe);
     }
     /* 
     @Test
@@ -58,14 +59,14 @@ public class UserTest {
 
     @Test
     public void user_functions_test(){
-        User user = new User("Felix", "Toledo", "felix@gmail.com");
-        user.setNombre("Felixito");
-        user.setApellido("Perez");
-        user.setDireccionCorreo("felixperez@gmail.com");
+        User user = new User("Pepe", "Pedro", "Pepe@gmail.com");
+        user.setNombre("Pepe");
+        user.setApellido("Pedro");
+        user.setDireccionCorreo("Pedro@gmail.com");
 
-        String hasToBeName = "Felixito";
-        String hasToBeSurname = "Perez";
-        String hasToBeMailAdress = "felixperez@gmail.com";
+        String hasToBeName = "Pepe";
+        String hasToBeSurname = "Pedro";
+        String hasToBeMailAdress = "Pedro@gmail.com";
 
         assertEquals(hasToBeName, user.getNombre());
         assertEquals(hasToBeSurname, user.getApelldio());

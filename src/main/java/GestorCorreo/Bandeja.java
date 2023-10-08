@@ -10,6 +10,7 @@ public class Bandeja {
         return mails.size();
     }
 
+
     public void anadir(Mail mail) {
         mails.add(mail);
     }

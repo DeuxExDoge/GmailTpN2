@@ -20,7 +20,7 @@ public class Mail {
     public String getAsunto() {
         return asunto;
     }
-    
+
     public ArrayList<String> getPara() {
         return para;
     }
@@ -33,4 +33,3 @@ public class Mail {
         return remitente;
     }
 }
-

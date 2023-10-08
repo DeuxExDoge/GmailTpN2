@@ -16,7 +16,7 @@ public class UserTest {
 
         assertEquals("Felix", nameOfFelix);
         assertEquals("Toledo", surnameOfFelix);
-        assertEquals("felixtoledoctes@aquilita.com", mailOfFelix);
+        assertEquals("felixtoledoctes@Pepe.com", mailOfFelix);
     }
 
     @Test

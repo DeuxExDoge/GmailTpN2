@@ -1,6 +1,5 @@
 package GestorCorreo;
 
-
 public class Contacto {
 
      private String nombre;

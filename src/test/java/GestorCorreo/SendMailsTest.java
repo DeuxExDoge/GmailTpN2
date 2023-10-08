@@ -13,7 +13,7 @@ public class SendMailsTest {
     User felix = aplicacion.crearUsuario("Felix", "Toledo", "felixt");
     User pedro = aplicacion.crearUsuario("Pedro", "Rosales", "pedro@gmail.com");
     ArrayList<String> para = new ArrayList<>();
-    para.add("felixt@aquilita.com");
+    para.add("felixt@Pepe.com");
     para.add("pedro@gmail.com");
 
     lau.crearMensaje(aplicacion, "Que onda mi hermano", "Buennos dias, quiero pregunntarte como estas", para);

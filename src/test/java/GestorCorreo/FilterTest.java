@@ -16,12 +16,12 @@ public class FilterTest {
 
      @Test
      public void filter_from_title(){
-          felix.anadirContacto("Gracielita", "Meza - TRABAJO", "gracemeza10@aquilita.com");
+          felix.anadirContacto("Gracielita", "Meza - TRABAJO", "gracemeza10@Pepe.com");
           felix.anadirContacto("Rodri", "Mi hermano", "rodrigo@gmail.com");
 
           felix.crearMensaje(app, "BuscoEste", "mensaje", felix.getTodosLosMailsDeContactos());
           felix.crearMensaje(app, "Nobuskoezte", "mjito", "rodrigo@gmail.com");
-          felix.crearMensaje(app, "EsteSiBusco", "mensaje", "gracemeza10@aquilita.com");
+          felix.crearMensaje(app, "EsteSiBusco", "mensaje", "gracemeza10@Pepe.com");
 
           FiltroAsunto filtro = new FiltroAsunto();
           ArrayList<Mail> resultado = felix.filtrarSalida("Busco", filtro);
@@ -30,8 +30,8 @@ public class FilterTest {
 
      @Test
      public void filter_from_message(){
-          felix.crearMensaje(app, "mensaje a grace", "hola graciela", "gracemeza10@aquilita.com");
-          felix.crearMensaje(app, "mensaje a grace", "chau grace", "gracemeza10@aquilita.com");
+          felix.crearMensaje(app, "mensaje a grace", "hola graciela", "gracemeza10@Pepe.com");
+          felix.crearMensaje(app, "mensaje a grace", "chau grace", "gracemeza10@Pepe.com");
      
           FiltroMensaje filtro = new FiltroMensaje();
           ArrayList<Mail> resultado = grace.filtrarEntrada("hola", filtro);

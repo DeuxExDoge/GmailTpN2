@@ -14,14 +14,14 @@ public class ContactTest {
 
     @Test
     public void contact_functions_test(){
-        Contacto contacto = new Contacto("Felix", "Toledo", "felix@gmail.com");
-        contacto.setNombre("Felixito");
-        contacto.setApellido("Perez");
-        contacto.setDireccionCorreo("felixperez@gmail.com");
+        Contacto contacto = new Contacto("Oriana", "Farela", "OrianaFa@gmail.com");
+        contacto.setNombre("Orianita");
+        contacto.setApellido("Farela");
+        contacto.setDireccionCorreo("OrianaFa@gmail.com");
 
-        String hasToBeName = "Felixito";
-        String hasToBeSurname = "Perez";
-        String hasToBeMailAdress = "felixperez@gmail.com";
+        String hasToBeName = "Orianita";
+        String hasToBeSurname = "Farela";
+        String hasToBeMailAdress = "OrianaFa@gmail.com";
 
         assertEquals(hasToBeName, contacto.getNombre());
         assertEquals(hasToBeSurname, contacto.getApellido());

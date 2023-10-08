@@ -20,11 +20,11 @@ public class FilterTest {
 
      @Test
      public void filter_from_title(){
-          mario.anadirContacto("Gracielita", "Meza - TRABAJO", "PiniBru10@Pepe");
-          mario.anadirContacto("Rodri", "Mi hermano", "OriFarela@gmail.com");
+          mario.anadirContacto("Bruno", "Pini - Facu", "PiniBru10@Pepe");
+          mario.anadirContacto("Orianita", "Le cuesta", "OriFarela@gmail.com");
 
           mario.crearMensaje(app, "BuscoEste", "mensaje", mario.getTodosLosMailsDeContactos());
-          mario.crearMensaje(app, "Nobuskoezte", "mjito", "OriFarela@gmail.com");
+          mario.crearMensaje(app, "Nobuskoezte", "mensaje", "OriFarela@gmail.com");
           mario.crearMensaje(app, "EsteSiBusco", "mensaje", "PiniBru10@Pepe.com");
 
           FiltroAsunto filtro = new FiltroAsunto();
@@ -34,8 +34,8 @@ public class FilterTest {
 
      @Test
      public void filter_from_message(){
-          mario.crearMensaje(app, "mensaje a grace", "hola graciela", "PiniBru10@Pepe.com");
-          mario.crearMensaje(app, "mensaje a grace", "chau grace", "PiniBru10@Pepe.com");
+          mario.crearMensaje(app, "mensaje a pini", "hola Peni", "PiniBru10@Pepe.com");
+          mario.crearMensaje(app, "mensaje a pini", "chau Brunito", "PiniBru10@Pepe.com");
      
           FiltroMensaje filtro = new FiltroMensaje();
           ArrayList<Mail> resultado = pini.filtrarEntrada("hola", filtro);
@@ -44,9 +44,9 @@ public class FilterTest {
 
      @Test
      public void filter_from_from(){
-          mario.crearMensaje(app, "hola", "mjito", "OriFarela@gmail.com");
-          mario.crearMensaje(app, "chau", "mjito", "OriFarela@gmail.com");
-          pini.crearMensaje(app, "Nobuskoezte", "mjito", "OriFarela@gmail.com");
+          mario.crearMensaje(app, "hola", "mensaje", "OriFarela@gmail.com");
+          mario.crearMensaje(app, "chau", "mensaje", "OriFarela@gmail.com");
+          pini.crearMensaje(app, "Nobuskoezte", "mensaje", "OriFarela@gmail.com");
 
           FiltroRemitente filtro = new FiltroRemitente();
           ArrayList<Mail> resultado = oriana.filtrarEntrada("Mario", filtro);
@@ -55,10 +55,10 @@ public class FilterTest {
 
      @Test
      public void filter_from_title_and_from(){
-          mario.crearMensaje(app, "hola", "mjito", "OriFarela@gmail.com");
-          mario.crearMensaje(app, "hola mi hermano", "quiero que hablemos", "OriFarela@gmail.com");
-          mario.crearMensaje(app, "chau", "mjito", "OriFarela@gmail.com");
-          pini.crearMensaje(app, "hola", "mjito", "OriFarela@gmail.com");
+          mario.crearMensaje(app, "hola", "mensaje", "OriFarela@gmail.com");
+          mario.crearMensaje(app, "hola mi hermana", "quiero que hablemos", "OriFarela@gmail.com");
+          mario.crearMensaje(app, "chau", "mensaje", "OriFarela@gmail.com");
+          pini.crearMensaje(app, "hola", "mensaje", "OriFarela@gmail.com");
 
           FiltroRemitenteAsunto filtro = new FiltroRemitenteAsunto();
           ArrayList<Mail> resultado = oriana.filtrarEntrada("hola", "Mario", filtro);
@@ -68,9 +68,9 @@ public class FilterTest {
      @Test
      public void filter_from_title_and_message(){
           mario.crearMensaje(app, "hola", "mi hermano", "OriFarela@gmail.com");
-          mario.crearMensaje(app, "este no", "mi hermano", "OriFarela@gmail.com");
+          mario.crearMensaje(app, "este no", "mi hermana", "OriFarela@gmail.com");
           mario.crearMensaje(app, "chau", "este no busco", "OriFarela@gmail.com");
-          mario.crearMensaje(app, "hola", "hermano, como estas?", "OriFarela@gmail.com");
+          mario.crearMensaje(app, "hola", "hermana, como estas?", "OriFarela@gmail.com");
 
           FiltroMensajeAsunto filtro = new FiltroMensajeAsunto();
           ArrayList<Mail> resultado = oriana.filtrarEntrada("hola", "hermano", filtro);

@@ -20,6 +20,7 @@ public class SendMailsTest {
     assertEquals(1, mario.getSalida().tamano());
     assertEquals(1, felix.getEntrada().tamano());
     assertEquals(1, pedro.getEntrada().tamano());
+    assertEquals(1, pedro.getEntrada().tamano());
 }
 
 }

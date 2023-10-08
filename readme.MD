@@ -7,14 +7,14 @@ Este proyecto es un sistema de gestión de correos electrónicos desarrollado ut
 
 ## Funcionalidades
 
-### Creación de Correos Electrónicos
+###  Correos Electrónicos
 - [X] Los correos electrónicos deben incluir las siguientes características: Asunto, Contenido, Remitente (un solo contacto) y Destinatarios (múltiples contactos).
 
-### Envío de Correos Electrónicos
+###  Correos Electrónicos
 - [X] Un usuario puede enviar un correo a múltiples contactos especificando varios destinatarios en el campo "Para".
 - [X] Cuando un usuario envía un correo, este debe ser almacenado en la Bandeja de Enviados del emisor y en la Bandeja de Recibidos del remitente.
 
-### Gestión de Contactos
+###  Contactos
 - [X] Un "Contacto" es un objeto que contiene información sobre el nombre de una persona y su dirección de correo electrónico. Se utiliza para especificar el remitente o los destinatarios en el campo "Para".
 
 ### Filtros

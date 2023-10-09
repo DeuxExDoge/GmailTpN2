@@ -18,6 +18,8 @@ public class Mail {
         this.para = para;
     }
 //mediante el uso del Set y Get podremos acceder a las clases
+//Set es para setear un valor, con eso podemos poner un valor
+//con get obtenemos un valor    
     public String getAsunto() {
         return asunto;
     }

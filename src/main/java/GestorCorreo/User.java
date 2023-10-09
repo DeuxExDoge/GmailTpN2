@@ -6,33 +6,39 @@ import GestorCorreo.Filters.*;
 import java.util.ArrayList;
 
 public class User {
-
+    //atributos de la clase
+    //tenemos un arraylist que recibe la clase contactos
     private ArrayList<Contacto> listaContactos = new ArrayList<>();
-
+    //creamos dos bandejas
     private Bandeja entrada = new Bandeja();
     private Bandeja salida = new Bandeja();
-
+    //atributos
     private String nombre;
     private String apellido;
     private String direccionCorreo;
-
+    //instanciamos los atributos y igualamos 
     public User(String nombre, String apellido, String direccionCorreo){
         this.setNombre(nombre);
         this.setApellido(apellido);
         this.setDireccionCorreo(direccionCorreo);
     }
-
+    //recibe nombre, apellido, dirrecccion de correo
     public Contacto anadirContacto(String nombre, String apellido, String direccionCorreo){
+    //crea un objeto nuevocontacto de la clase contacto
         Contacto nuevoContacto = new Contacto(nombre, apellido, direccionCorreo);
+    //en lista contacto que es un arraylist que recibe contactos
+    //añade los nuevos contactos
         listaContactos.add(nuevoContacto);
+    //devuelve los nuevos contactos
         return nuevoContacto;
     }
-
+    //me muestra la lista de contactos
     public ArrayList<Contacto> getListaContactos(){
         return listaContactos;
     }
-//Crea un array de strings que se llama mails donde recorremos toda la lista y vamos añadiendo 
-//todas las direcciones de correos y las añadimos a nuestra lista de mails y retornamos mails
+
+    //Crea un array de strings que se llama mails donde recorremos toda la lista y vamos añadiendo 
+    //todas las direcciones de correos a nuestra lista mails y retornamos mails
     public ArrayList<String> getTodosLosMailsDeContactos(){
         ArrayList<String> mails = new ArrayList<>();
 
@@ -43,6 +49,8 @@ public class User {
         return mails;
     }
 
+    //
+    //
     public void crearMensaje(MailManager aplicacion, String asunto, String mensaje, String para) {
         ArrayList<String> listPara = new ArrayList<>();
         listPara.add(para);
@@ -71,16 +79,20 @@ public class User {
         ArrayList<Mail> finded = filterType.filtrar(searchTitle, searchOther, entrada);
         return finded;
     }
-
+    //añado a Mail sus caracteristicas  y creando un clon de mail llamado newmail le damos los valores de mail. 
+    //hacemos esto antes de hacer un get y un set
+    //añadimos un mail a la bandeja de entrad
+    //no lo pongo con el mismo objeto añado un clon porque sino se puede modificar
     public void anadirMailEntrada(Mail mail){
         Mail newMail = new Mail(mail.getAsunto(), mail.getMensaje(), mail.getRemitente(), mail.getPara());
         entrada.anadir(newMail);
     }
 
+    //añadimos un mail a la bandeja de salida
     public void anadirMailSalida(Mail mail){
         salida.anadir(mail);
     }
-
+    //
     public void setDireccionCorreo(String direccionCorreo) {
         if(direccionCorreo.contains("@")){
             this.direccionCorreo = direccionCorreo;

@@ -13,6 +13,7 @@ public class FiltroMensaje extends Filtro {
      @Override
      protected ArrayList<Mail> buscarString(String aBuscar, Bandeja bandeja) {
           ArrayList<Mail> mails = bandeja.traerTodo().stream()
+        //busca el string en mensaje y tiene que contener aBuscar
                   .filter(mail -> mail.getMensaje().contains(aBuscar))
                   .collect(Collectors.toCollection(ArrayList::new)); // Collect the filtered mails into an ArrayList
           return mails; // Return the ArrayList containing filtered mails

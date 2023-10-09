@@ -49,7 +49,7 @@ public class User {
         return mails;
     }
 
-    //
+    //el metodo crear mensaje recibe aplicacion, asunto, mensaje y para
     //
     public void crearMensaje(MailManager aplicacion, String asunto, String mensaje, String para) {
         ArrayList<String> listPara = new ArrayList<>();
@@ -57,32 +57,44 @@ public class User {
 
         crearMensaje(aplicacion, asunto, mensaje, listPara);
     }
-    
+
+    //el metodo crear mensaje recibe aplicacion, asunto, mensaje y para
+    //creamos un objeto mail recibe asunto, mensaje, this.getdireccionCorreo(aca va ir la direccion de correo del remitente)
+    //mandamos el mensaje a la persona que elegimos 
     public void crearMensaje(MailManager aplicacion, String asunto, String mensaje, ArrayList<String> para) {
         Mail mail = new Mail(asunto, mensaje, this.getDireccionCorreo(), para);
         aplicacion.mandarMensaje(this, mail);
     }
-
+    //recibimos un string a buscar y un filtro
     public ArrayList<Mail> filtrarSalida(String toSearch, Filtro filterType){
+    //hace un arraylist de mails porque queremos filtrar los mails
+    //aca guardamos los mails filtrados. recibimos la cadena de texto a buscar y filtertype es para saber en donde lo va a buscar en mensaje o asunto o ect.
         ArrayList<Mail> finded = filterType.filtrar(toSearch, salida);
         return finded;
     }
+    //recibimos un string que buscar y el tipo de filtro
     public ArrayList<Mail> filtrarSalida(String searchTitle, String searchOther, Filtro filterType){
+    //filtertype.filtrar le pasamos el titulo y otra cosa el remitente o el mensaje  y aca buscamos en la bandeja de salida
         ArrayList<Mail> finded = filterType.filtrar(searchTitle, searchOther, salida);
         return finded;
     }
     public ArrayList<Mail> filtrarEntrada(String toSearch, Filtro filterType){
+    //filtertype.filtrar le pasamos el titulo y otra cosa el remitente o el mensaje  y aca buscamos en la bandeja de entrada
+
         ArrayList<Mail> finded = filterType.filtrar(toSearch, entrada);
         return finded;
     }
+
     public ArrayList<Mail> filtrarEntrada(String searchTitle, String searchOther, Filtro filterType){
         ArrayList<Mail> finded = filterType.filtrar(searchTitle, searchOther, entrada);
+        //filtertype.filtrar le pasamos el titulo y otra cosa el remitente o el mensaje  y aca buscamos en la bandeja dee salida
         return finded;
     }
+
     //añado a Mail sus caracteristicas  y creando un clon de mail llamado newmail le damos los valores de mail. 
-    //hacemos esto antes de hacer un get y un set
-    //añadimos un mail a la bandeja de entrad
     //no lo pongo con el mismo objeto añado un clon porque sino se puede modificar
+    //hacemos esto antes de hacer un get y un set
+    //añadimos un mail a la bandeja de entrada
     public void anadirMailEntrada(Mail mail){
         Mail newMail = new Mail(mail.getAsunto(), mail.getMensaje(), mail.getRemitente(), mail.getPara());
         entrada.anadir(newMail);
@@ -92,7 +104,8 @@ public class User {
     public void anadirMailSalida(Mail mail){
         salida.anadir(mail);
     }
-    //
+    //recibe la dirreccion de correo y si direccion de correo contien un @ guarda la direccion
+    //sino a direccion de correo le agrega @Pepe.com y ahi lo guarda.
     public void setDireccionCorreo(String direccionCorreo) {
         if(direccionCorreo.contains("@")){
             this.direccionCorreo = direccionCorreo;

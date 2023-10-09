@@ -9,9 +9,6 @@ import java.util.ArrayList;
 
 public class FilterTest {
      MailManager app = new MailManager();
-     /*User felix = app.crearUsuario("Felix", "Toledo", "felixtoledoctes");
-     User rodrigo = app.crearUsuario("rodri", "Gonzalez", "rodrigo@gmail.com");
-     User grace = app.crearUsuario("grace", "meza", "gracemeza10"); */
 
      User mario = app.crearUsuario("Mario", "GonzalezJr", "MarioGonzalezJrdoctes");
      User oriana = app.crearUsuario("Oriana", "Farela", "OriFarela@gmail.com");
@@ -67,13 +64,13 @@ public class FilterTest {
 
      @Test
      public void filter_from_title_and_message(){
-          mario.crearMensaje(app, "hola", "mi hermano", "OriFarela@gmail.com");
+          mario.crearMensaje(app, "hola", "mi hermana", "OriFarela@gmail.com");
           mario.crearMensaje(app, "este no", "mi hermana", "OriFarela@gmail.com");
           mario.crearMensaje(app, "chau", "este no busco", "OriFarela@gmail.com");
           mario.crearMensaje(app, "hola", "hermana, como estas?", "OriFarela@gmail.com");
 
           FiltroMensajeAsunto filtro = new FiltroMensajeAsunto();
-          ArrayList<Mail> resultado = oriana.filtrarEntrada("hola", "hermano", filtro);
+          ArrayList<Mail> resultado = oriana.filtrarEntrada("hola", "hermana", filtro);
           assertEquals(2, resultado.size());
      }
 
@@ -92,4 +89,7 @@ public class FilterTest {
           assertEquals("Filtro de Asunto", nombreFiltroAsunto);
 
      }
+
+     
+
 }

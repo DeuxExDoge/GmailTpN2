@@ -31,7 +31,8 @@ public class User {
     public ArrayList<Contacto> getListaContactos(){
         return listaContactos;
     }
-
+//Crea un array de strings que se llama mails donde recorremos toda la lista y vamos añadiendo 
+//todas las direcciones de correos y las añadimos a nuestra lista de mails y retornamos mails
     public ArrayList<String> getTodosLosMailsDeContactos(){
         ArrayList<String> mails = new ArrayList<>();
 
@@ -48,6 +49,7 @@ public class User {
 
         crearMensaje(aplicacion, asunto, mensaje, listPara);
     }
+    
     public void crearMensaje(MailManager aplicacion, String asunto, String mensaje, ArrayList<String> para) {
         Mail mail = new Mail(asunto, mensaje, this.getDireccionCorreo(), para);
         aplicacion.mandarMensaje(this, mail);
